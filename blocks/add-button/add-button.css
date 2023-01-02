@@ -1,0 +1,10 @@
+.add-button {
+  background-image: url(../../images/add-button.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  object-fit: cover;
+  background-position: center center;
+  height: 50px;
+  width: 150px;
+  grid-column: 3/4;
+}

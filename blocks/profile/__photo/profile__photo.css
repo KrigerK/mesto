@@ -1,0 +1,8 @@
+.profile__photo {
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
+  margin-right: 30px;
+  grid-row: 1/3;
+}
