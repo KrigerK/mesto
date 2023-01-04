@@ -9,7 +9,7 @@
   border: 1px solid #fff;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 768px) {
   .add-button {
     margin-top: 33px;
     min-width: 280px;

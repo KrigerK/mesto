@@ -9,7 +9,7 @@
   grid-area: profile-description;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 768px) {
   .description {
     font-size: 14px;
     line-height: 17px;
