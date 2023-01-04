@@ -1,0 +1,20 @@
+.profile__personal-data {
+  display: grid;
+  grid-area: profile-personal-data;
+  grid-template-areas:
+  "photo profile-name edit-button . add-button"
+  "photo profile-name . . add-button";
+
+}
+
+@media screen and (max-width: 320px) {
+  .profile__personal-data {
+    grid-template-areas:
+    "photo photo"
+    "profile-name edit-button"
+    "profile-description profile-description"
+    "add-button add-button";
+    justify-items: center;
+
+  }
+}
