@@ -1,4 +1,4 @@
-.description {
+.profile__description {
   /*grid-row-start: 2;
   grid-column: 2/3;*/
   margin-top: 0;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .description {
+  .profile__description {
     font-size: 14px;
     line-height: 17px;
     text-align: center;

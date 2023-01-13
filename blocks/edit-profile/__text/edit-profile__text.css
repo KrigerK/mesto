@@ -1,0 +1,14 @@
+.edit-profile__text {
+  padding: 0;
+  margin-top: 54px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+@media screen and (max-width: 320px) {
+  .edit-profile__text {
+    margin-top: 75px;
+  }
+}
