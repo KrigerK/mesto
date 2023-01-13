@@ -1,0 +1,14 @@
+.edit-profile__description {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  max-width: 358px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+@media screen and (max-width: 320px) {
+  .edit-profile__description {
+  max-width: 238px;
+}
+}

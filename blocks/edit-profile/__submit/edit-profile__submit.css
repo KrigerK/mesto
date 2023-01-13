@@ -1,0 +1,21 @@
+.edit-profile__submit {
+  background-color: black;
+  min-width: 358px;
+  border-radius: 2px;
+  min-height: 50px;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: 48px;
+  border: none;
+}
+@media screen and (max-width: 768px) {
+.edit-profile__submit {
+  min-width: 238px;
+  min-height: 46px;
+  font-size: 14px;
+  line-height: 17px;
+  margin-top: 60px;
+}
+}

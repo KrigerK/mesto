@@ -8,9 +8,32 @@
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__info/profile__info.css);
 @import url(../blocks/profile/__photo/profile__photo.css);
-@import url(../blocks/profile/__edit-button/profile__edit-button.css);
+@import url(../blocks/profile/__open-popup/profile__open-popup.css);
 @import url(../blocks/profile/__name/profile__name.css);
-@import url(../blocks/profile/__perdonal-data/profile__personal-data.css);
+@import url(../blocks/profile/__personal-data/profile__personal-data.css);
+@import url(../blocks/profile/__name-box/profile__name-box.css);
 
 @import url(../blocks/add-button/add-button.css);
 @import url(../blocks/profile/__description/profile__description.css);
+
+@import url(../blocks/places/places.css);
+@import url(../blocks/card/card.css);
+@import url(../blocks/card/__image/card__image.css);
+@import url(../blocks/card/__like/card__like.css);
+@import url(../blocks/card/__like/_active/card__like_active.css);
+@import url(../blocks/card/__title/card__title.css);
+@import url(../blocks/card/__description/card__description.css);
+
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/opacity/opacity.css);
+
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup/__close/popup__close.css);
+@import url(../blocks/popup/_opened/popup_opened.css);
+@import url(../blocks/edit-profile/edit-profile.css);
+@import url(../blocks/edit-profile/__submit/edit-profile__submit.css);
+@import url(../blocks/edit-profile/__title/edit-profile__title.css);
+@import url(../blocks/edit-profile/__name/edit-profile__name.css);
+@import url(../blocks/edit-profile/__description/edit-profile__description.css);
+@import url(../blocks/edit-profile/__text/edit-profile__text.css);
