@@ -5,9 +5,10 @@
   background-color: transparent;
   border: none;
   transform: translate(438px, -40px);
+  cursor: pointer;
 }
 
-@media screen and (max-width: 320px)  {
+@media screen and (max-width: 768px)  {
   .popup__close {
     width: 20px;
     height: 20px;

@@ -12,76 +12,78 @@
   </header>
   <main class="main">
     <section class="profile" >
-      <section class="profile__personal-data">
+      <div class="profile__personal-data">
         <img src="./images/profile-photo.jpg" alt="Аватар пользователя" class="profile__photo">
           <div class="profile__info">
             <div class="profile__name-box">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
-            <button class="profile__open-popup opacity"></button>
+            <button class="profile__open-popup opacity" type="button"></button>
             </div>
             <p class="profile__description">Исследователь океана</p>
           </div>
-      </section>
-        <div class="add-button opacity"></div>
+      </div>
+        <button class="profile__add-button opacity" type="button"></button>
     </section>
-    <ul class="places">
-      <li class="card">
-        <img src="./images/places-karachaevsk.jpg" alt="Старый храм на фоне гор." class="card__image">
-        <section class="card__description">
-          <h2 class="card__title">Карачаевск</h2>
-          <button class="card__like"></button>
-        </section>
-      </li>
-      <li class="card">
-        <img src="./images/places-elbrus.png" alt="Рассвет в горах." class="card__image">
-        <section class="card__description">
-          <h2 class="card__title">Гора Эльбрус</h2>
-          <button class="card__like"></button>
-        </section>
-      </li>
-      <li class="card">
-        <img src="./images/places-dombai.png" alt="Заснеженный пик горы возвышается за лесом." class="card__image">
-        <section class="card__description">
-          <h2 class="card__title">Домбай</h2>
-          <button class="card__like"></button>
-        </section>
-      </li>
-      <li class="card">
-        <img src="./images/places-elbrus.png" alt="Рассвет в горах." class="card__image">
-        <section class="card__description">
-          <h2 class="card__title">Гора Эльбрус</h2>
-          <button class="card__like"></button>
-        </section>
-      </li>
-      <li class="card">
-        <img src="./images/places-dombai.png" alt="Заснеженный пик горы возвышается за лесом." class="card__image">
-        <section class="card__description">
-          <h2 class="card__title">Домбай</h2>
-          <button class="card__like"></button>
-        </section>
-      </li>
-      <li class="card">
-        <img src="./images/places-karachaevsk.jpg" alt="Старый храм на фоне гор." class="card__image">
-        <section class="card__description">
-          <h2 class="card__title">Карачаево-Черкесия</h2>
-          <button class="card__like"></button>
-        </section>
-      </li>
+    <section class="places">
+      <ul class="places__list">
+        <li class="card">
+          <img src="./images/places-karachaevsk.jpg" alt="Старый храм на фоне гор." class="card__image">
+          <div class="card__description">
+            <h2 class="card__title">Карачаевск</h2>
+            <button class="card__like" type="button"></button>
+          </div>
+        </li>
+        <li class="card">
+          <img src="./images/places-elbrus.png" alt="Рассвет в горах." class="card__image">
+          <div class="card__description">
+            <h2 class="card__title">Гора Эльбрус</h2>
+            <button class="card__like" type="button"></button>
+          </div>
+        </li>
+        <li class="card">
+          <img src="./images/places-dombai.png" alt="Заснеженный пик горы возвышается за лесом." class="card__image">
+          <div class="card__description">
+            <h2 class="card__title">Домбай</h2>
+            <button class="card__like" type="button"></button>
+          </div>
+        </li>
+        <li class="card">
+          <img src="./images/places-elbrus.png" alt="Рассвет в горах." class="card__image">
+          <div class="card__description">
+            <h2 class="card__title">Гора Эльбрус</h2>
+            <button class="card__like" type="button"></button>
+          </div>
+        </li>
+        <li class="card">
+          <img src="./images/places-dombai.png" alt="Заснеженный пик горы возвышается за лесом." class="card__image">
+          <div class="card__description">
+            <h2 class="card__title">Домбай</h2>
+            <button class="card__like" type="button"></button>
+          </div>
+        </li>
+        <li class="card">
+          <img src="./images/places-karachaevsk.jpg" alt="Старый храм на фоне гор." class="card__image">
+          <div class="card__description">
+            <h2 class="card__title">Карачаево-Черкесия</h2>
+            <button class="card__like" type="button"></button>
+          </div>
+        </li>
     </ul>
+    </section>
   </main>
   <footer class="footer">
     <p class="footer__copyright">&#64;2020 Mesto Russia</p>
   </footer>
   <section class="popup">
     <div class="popup__container">
-      <button class="popup__close"></button>
-      <form class="edit-profile">
+      <button class="popup__close opacity" type="button"></button>
+      <form class="edit-profile" name="edit-profile">
         <h2 class="edit-profile__title">Редактировать профиль</h2>
         <fieldset class="edit-profile__text">
-          <input type="text" class="edit-profile__name" name="profile-name" value="Жак-Ив Кусто" placeholder="Ваше имя">
-          <input type="text" class="edit-profile__description" name="profile-description" value="Исследователь океана"  placeholder="Чем вы занимаетесь">
+          <input type="text" class="edit-profile__personal-data edit-profile__personal-data_input_name" name="profile-name" value="Жак-Ив Кусто" placeholder="Ваше имя">
+          <input type="text" class="edit-profile__personal-data edit-profile__personal-data_input_description" name="profile-description" value="Исследователь океана"  placeholder="Чем вы занимаетесь">
         </fieldset>
-        <button type="submit" class="edit-profile__submit opacity">Сохранить</button>
+        <button type="submit" class="edit-profile__submit">Сохранить</button>
       </form>
     </div>
   </section>

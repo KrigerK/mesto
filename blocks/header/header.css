@@ -1,8 +1,8 @@
 .header {
   padding-top: 45px;
   min-height: 74px;
+  height: max-content;
   border-bottom: 1px solid rgba(84, 84, 84, 0.7);
-
 }
 
 @media screen and (max-width: 768px) {

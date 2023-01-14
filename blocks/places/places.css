@@ -1,18 +1,8 @@
 .places{
-  display: grid;
-  gap: 17px;
-  grid-template-columns: repeat(3, 282px);
-  grid-auto-flow: row;
-  list-style: none;
   margin-top: 50px;
-  padding: 0;
 }
 @media screen and (max-width: 768px) {
   .places {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     margin-top: 36px;
-    gap: 20px;
 }
 }

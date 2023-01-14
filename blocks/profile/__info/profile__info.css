@@ -1,9 +1,12 @@
 .profile__info {
   display: flex;
   flex-direction: column;
-  min-width: 336px;
+  min-width: 340px;
+  width: max-content;
   justify-content: center;
   grid-area: profile-name;
+  width: fit-content;
+  max-width: 100%;
 }
 
 @media screen and (max-width: 768px) {

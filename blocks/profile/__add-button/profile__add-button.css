@@ -1,5 +1,5 @@
-.add-button {
-  background-image: url(../../images/add-button-mobile.svg);
+.profile__add-button {
+  background-image: url(../../../images/add-button-mobile.svg);
   background-repeat: no-repeat;
   background-size: 22px;
   background-position: center center;
@@ -8,10 +8,13 @@
   grid-area: add-button;
   border: 1px solid #fff;
   border-radius: 2px;
+  background-color: transparent;
+  cursor: pointer;
+  
 }
 
 @media screen and (max-width: 768px) {
-  .add-button {
+  .profile__add-button {
     margin-top: 33px;
     min-width: 280px;
     background-size: 16px;

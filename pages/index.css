@@ -1,5 +1,5 @@
-@import url(../vendor/fonts/fonts.css);
 @import url(../vendor/normalize.css);
+@import url(../vendor/fonts/fonts.css);
 
 @import url(../blocks/page/page.css);
 @import url(../blocks/header/header.css);
@@ -13,10 +13,11 @@
 @import url(../blocks/profile/__personal-data/profile__personal-data.css);
 @import url(../blocks/profile/__name-box/profile__name-box.css);
 
-@import url(../blocks/add-button/add-button.css);
+@import url(../blocks/profile/__add-button/profile__add-button.css);
 @import url(../blocks/profile/__description/profile__description.css);
 
 @import url(../blocks/places/places.css);
+@import url(../blocks/places/__list/places__list.css);
 @import url(../blocks/card/card.css);
 @import url(../blocks/card/__image/card__image.css);
 @import url(../blocks/card/__like/card__like.css);
@@ -34,6 +35,5 @@
 @import url(../blocks/edit-profile/edit-profile.css);
 @import url(../blocks/edit-profile/__submit/edit-profile__submit.css);
 @import url(../blocks/edit-profile/__title/edit-profile__title.css);
-@import url(../blocks/edit-profile/__name/edit-profile__name.css);
-@import url(../blocks/edit-profile/__description/edit-profile__description.css);
+@import url(../blocks/edit-profile/__personal-data/edit-profile__personal-data.css);
 @import url(../blocks/edit-profile/__text/edit-profile__text.css);

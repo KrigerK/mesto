@@ -5,6 +5,9 @@
   font-size: 18px;
   line-height: 22px;
   grid-area: profile-description;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 @media screen and (max-width: 768px) {
