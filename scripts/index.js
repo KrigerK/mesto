@@ -24,19 +24,26 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
-
-const popupElement = document.querySelector('.popup');
-const popupCloseButtonElement = popupElement.querySelector('.popup__close');
+//редактирование профиля
+const popupEditElement = document.querySelector('.popup_element_edit-profile');
+const popupCloseButtonElement = popupEditElement.querySelector('.popup__close_edit-profile');
 const popupOpenButtonElement = document.querySelector('.profile__open-popup');
 const formElement = document.querySelector('.edit-profile');
 const nameInput = formElement.querySelector('.edit-profile__personal-data_input_name');
 const jobInput = formElement.querySelector('.edit-profile__personal-data_input_description');
 const profileName = document.querySelector('.profile__name');
 const profileDescription = document.querySelector('.profile__description');
+
+//добавление новых карточек темплейт
 const template = document.querySelector('#card-template');
 const cardPlace = document.querySelector('.places__list');
 
-//добавила новые карточки
+//создание карточки
+const addCardButton = document.querySelector('.profile__add-button');
+const popupAddCardElement = document.querySelector('.popup_element_add-card');
+const addCardCloseButton = popupAddCardElement.querySelector('.popup__close_add-card')
+
+//добавление новых карточек
 initialCards.forEach(function(newCard){
   const card = template.content.querySelector('.card').cloneNode(true);
 
@@ -46,18 +53,33 @@ initialCards.forEach(function(newCard){
   cardPlace.prepend(card);
 });
 
-//
+//функциb открытия и закрытия попапа
+function openPopup (popup){
+  popup.classList.add('popup_opened');
+}
 
+function closePopup(popup) {
+  popup.classList.remove('popup_opened');
+}
 
-function openPopup() {
-  popupElement.classList.add('.popup_opened');
+// //функция редактирования профиля
+const editProfile = function () {
+
   nameInput.textContent = profileName.value;
   jobInput.textContent = profileDescription.value;
+
+  openPopup(popupEditElement);
 }
 
-function closePopup() {
-  popupElement.classList.remove('popup_opened');
+//функция добавления карточек
+function addCard () {
+  openPopup(popupAddCardElement);
 }
+
+
+// function closePopup() {
+//   popupElement.classList.remove('popup_opened');
+// }
 
 function handleFormSubmit (evt) {
     evt.preventDefault();
@@ -68,6 +90,14 @@ function handleFormSubmit (evt) {
   closePopup();
 }
 
-popupOpenButtonElement.addEventListener('click', openPopup);
-popupCloseButtonElement.addEventListener('click', closePopup);
+popupOpenButtonElement.addEventListener('click', editProfile);
+
+popupCloseButtonElement.addEventListener('click', () => {
+  closePopup(popupEditElement)});
+
 formElement.addEventListener('submit', handleFormSubmit);
+
+addCardButton.addEventListener('click', addCard);
+
+addCardCloseButton.addEventListener('click', () => {
+  closePopup(popupAddCardElement)});
