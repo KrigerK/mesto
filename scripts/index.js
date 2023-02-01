@@ -1,3 +1,4 @@
+
 const initialCards = [
   {
     name: 'Балаклава',
@@ -37,6 +38,8 @@ const profileDescription = document.querySelector('.profile__description');
 //добавление новых карточек темплейт
 const template = document.querySelector('#card-template');
 const cardPlace = document.querySelector('.places__list');
+const newCardName = initialCards.name;
+const newCardLink = initialCards.link;
 
 //создание карточки
 const addCardButton = document.querySelector('.profile__add-button');
@@ -46,15 +49,40 @@ const addCardName = popupAddCardElement.querySelector('.popup_element_card-name'
 const addCardImage = popupAddCardElement.querySelector('.popup_element_card-img');
 const formAddElement = document.querySelector('.form_add');
 
-//добавление новых карточек
-initialCards.forEach(function(newCard){
+const popupBigImage = document.querySelector('.popup-big-img');
+
+//добавление новых карточек темплейт
+const createNewCard = (newCard) =>{
   const card = template.content.querySelector('.card').cloneNode(true);
 
-  card.querySelector('.card__image').src = newCard.link;
-  card.querySelector('.card__title').textContent = newCard.name;
+  const cardImage = card.querySelector('.card__image');
+  const cardName = card.querySelector('.card__title');
 
-  cardPlace.prepend(card);
-});
+  cardImage.src = newCard.link;
+  cardImage.alt = newCard.name;
+  cardName.textContent = newCard.name;
+
+  const cardLikeElement =  card.querySelector('.card__like');
+  cardLikeElement.addEventListener('click', (evt) => {
+    evt.target.classList.toggle('card__like_active')
+  });
+
+  const cardRemoveElement = card.querySelector('.card__trash-btn');
+  cardRemoveElement.addEventListener('click', () => {
+    card.remove();
+  });
+
+
+
+  return card;
+};
+
+
+const renderNewCard = (newCard) => {
+  cardPlace.append(createNewCard(newCard))
+};
+
+initialCards.forEach((item) => renderNewCard(item));
 
 //функциb открытия и закрытия попапа
 const openPopup = function (popup){
@@ -90,9 +118,13 @@ const addCardSubmit = function (evt){
   const card = template.content.querySelector('.card').cloneNode(true);
 
   card.querySelector('.card__image').src = addCardImage.value;
+  card.querySelector('.card__image').alt = addCardName.value;
   card.querySelector('.card__title').textContent = addCardName.value;
 
   cardPlace.prepend(card);
+
+  addCardImage.value = '';
+  addCardName.value = '';
 
   closePopup(popupAddCardElement);
 }
@@ -113,6 +145,3 @@ addCardCloseButton.addEventListener('click', () => {
 formEditElement.addEventListener('submit', handleFormSubmit);
 
 formAddElement.addEventListener('submit', addCardSubmit);
-
-
-
