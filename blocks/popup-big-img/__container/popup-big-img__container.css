@@ -1,5 +1,8 @@
-.popup__image-container {
-  max-width: 75vw;
-  max-height: 75vh;
+.popup-big-img__container {
+  margin: 0;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

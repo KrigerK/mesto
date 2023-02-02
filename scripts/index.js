@@ -49,6 +49,7 @@ const addCardName = popupAddCardElement.querySelector('.popup_element_card-name'
 const addCardImage = popupAddCardElement.querySelector('.popup_element_card-img');
 const formAddElement = document.querySelector('.form_add');
 
+//картинка на весь экран
 const popupBigImage = document.querySelector('.popup-big-img');
 
 //добавление новых карточек темплейт
@@ -72,11 +73,17 @@ const createNewCard = (newCard) =>{
     card.remove();
   });
 
-
+  cardImage.addEventListener('click', (evt) => {
+    openPopup(popupBigImage);
+    popupBigImage.querySelector('.popup-big-img__fullscreen').src = evt.target.src;
+    popupBigImage.querySelector('.popup-big-img__label').textContent = evt.target.alt;
+    popupBigImage.querySelector('.popup-big-img__fullscreen').alt = evt.target.alt;
+  });
+popupBigImage.querySelector('.popup-big-img__close').addEventListener('click', () =>
+closePopup(popupBigImage));
 
   return card;
 };
-
 
 const renderNewCard = (newCard) => {
   cardPlace.append(createNewCard(newCard))
