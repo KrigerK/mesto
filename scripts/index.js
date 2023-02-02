@@ -30,7 +30,7 @@ const initialCards = [
 const popupEditElement = document.querySelector('.popup_element_edit-profile');
 const popupCloseButtonElement = popupEditElement.querySelector('.popup__close_edit-profile');
 const popupOpenButtonElement = document.querySelector('.profile__open-popup');
-const formEditElement = document.querySelector('.popup__form_edit');
+const formEditElement = document.querySelector('.popup__form-edit');
 const nameInput = formEditElement.querySelector('.edit-profile__personal-data_input_name');
 const jobInput = formEditElement.querySelector('.edit-profile__personal-data_input_description');
 const profileName = document.querySelector('.profile__name');
@@ -44,9 +44,9 @@ const cardPlace = document.querySelector('.places__list');
 const addCardButton = document.querySelector('.profile__add-button');
 const popupAddCardElement = document.querySelector('.popup_element_add-card');
 const addCardCloseButton = popupAddCardElement.querySelector('.popup__close_add-card');
-const addCardName = popupAddCardElement.querySelector('.popup__element_card-name');
-const addCardImage = popupAddCardElement.querySelector('.popup__element_card-img');
-const formAddElement = document.querySelector('.popup__form_add');
+const addCardName = popupAddCardElement.querySelector('.card-name');
+const addCardImage = popupAddCardElement.querySelector('.card-img');
+const formAddElement = document.querySelector('.popup__form-add');
 
 //картинка на весь экран
 const popupBigImage = document.querySelector('.popup-big-img');
