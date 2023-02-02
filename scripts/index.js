@@ -5,26 +5,27 @@ const initialCards = [
     link: './images/places-balaclava.jpg'
   },
   {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    name: 'Ай-Петри',
+    link: './images/places-ai-petri.jpg'
   },
   {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    name: 'Фиолент',
+    link: './images/places-fiolent.jpg'
   },
   {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    name: 'Ялта',
+    link: './images/places-yalta.jpg'
   },
   {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    name: 'Скала Дива',
+    link: './images/places-diva.jpg'
   },
   {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+    name: 'Херсонес Таврический',
+    link: './images/places-hersones.jpg'
   }
 ];
+
 //редактирование профиля
 const popupEditElement = document.querySelector('.popup_element_edit-profile');
 const popupCloseButtonElement = popupEditElement.querySelector('.popup__close_edit-profile');
@@ -38,8 +39,6 @@ const profileDescription = document.querySelector('.profile__description');
 //добавление новых карточек темплейт
 const template = document.querySelector('#card-template');
 const cardPlace = document.querySelector('.places__list');
-const newCardName = initialCards.name;
-const newCardLink = initialCards.link;
 
 //создание карточки
 const addCardButton = document.querySelector('.profile__add-button');
@@ -62,6 +61,7 @@ const createNewCard = (newCard) =>{
   cardImage.src = newCard.link;
   cardImage.alt = newCard.name;
   cardName.textContent = newCard.name;
+
 
   const cardLikeElement =  card.querySelector('.card__like');
   cardLikeElement.addEventListener('click', (evt) => {
@@ -122,13 +122,10 @@ const handleFormSubmit = function (evt) {
 const addCardSubmit = function (evt){
   evt.preventDefault();
 
-  const card = template.content.querySelector('.card').cloneNode(true);
-
-  card.querySelector('.card__image').src = addCardImage.value;
-  card.querySelector('.card__image').alt = addCardName.value;
-  card.querySelector('.card__title').textContent = addCardName.value;
-
-  cardPlace.prepend(card);
+  cardPlace.prepend (createNewCard({
+    name: addCardName.value, link: addCardImage.value
+  })
+  );
 
   addCardImage.value = '';
   addCardName.value = '';
