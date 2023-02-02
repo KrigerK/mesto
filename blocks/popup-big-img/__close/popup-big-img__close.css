@@ -3,3 +3,14 @@
   top: 0px;
   right: 400px;
 }
+
+@media screen and (max-width: 768px)  {
+  .popup__close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0px;
+    right: 230px;
+    background-size: contain;
+}
+}
