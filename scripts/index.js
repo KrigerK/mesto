@@ -149,6 +149,12 @@ popupList.forEach((popup) => {
   })
  });
 
+ const escapeClose = (event) =>  {
+  if(event.key === 'Escape') {
+    closePopup(popup)
+ }
+ }
+ 
  popupList.forEach((popup) => {
   popup.addEventListener('keydown', (event)=>{
    if(event.key === 'Escape') {
@@ -165,4 +171,3 @@ addCardButton.addEventListener('click', () => {
 profileForm.addEventListener('submit', handleProfileFormSubmit);
 
 addCardForm.addEventListener('submit',  handleAddCardSubmit);
-

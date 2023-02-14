@@ -38,7 +38,6 @@
 @import url(../blocks/popup-form/__input/popup-form__input.css);
 @import url(../blocks/popup-form/__text/popup-form__text.css);
 @import url(../blocks/popup-form/__input/_type/_error/popup-form__input_type_error.css);
-@import url(../blocks/popup-form/__input-box/popup-form__input-box.css);
 @import url(../blocks/popup-form/__submit/_disabled/popup-form__submit_disabled.css);
 
 @import url(../blocks/card/__img-container/card__img-container.css);
