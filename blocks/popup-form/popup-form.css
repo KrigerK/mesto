@@ -1,4 +1,4 @@
-.edit-profile {
+.popup-form {
   display: flex;
   flex-direction: column;
   width: calc(100% - 2*36px);
@@ -6,7 +6,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .edit-profile{
+  .popup-form{
   width: calc(100% - 2*22px);
 }
 }

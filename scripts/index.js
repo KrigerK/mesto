@@ -27,11 +27,11 @@ const initialCards = [
 ];
 
 //редактирование профиля
-const popupProfile = document.querySelector('.popup_element_edit-profile');
+const popupProfile = document.querySelector('.popup_element_popup-form');
 const profileOpenButton = document.querySelector('.profile__open-popup');
 const profileForm = document.forms["profile-form"];
-const profileNameInput = profileForm.querySelector('.edit-profile__personal-data_input_name');
-const profileJobInput = profileForm.querySelector('.edit-profile__personal-data_input_description');
+const profileNameInput = profileForm.querySelector('.popup-form__input_input_name');
+const profileJobInput = profileForm.querySelector('.popup-form__input_input_description');
 const profileName = document.querySelector('.profile__name');
 const profileDescription = document.querySelector('.profile__description');
 
