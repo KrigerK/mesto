@@ -27,12 +27,11 @@ const initialCards = [
 ];
 
 //редактирование профиля
-const popupProfile = document.querySelector('.popup_element_edit-profile');
-// const profileCloseButton = popupProfile.querySelector('.popup__close_edit-profile');
+const popupProfile = document.querySelector('.popup_element_popup-form');
 const profileOpenButton = document.querySelector('.profile__open-popup');
 const profileForm = document.forms["profile-form"];
-const profileNameInput = profileForm.querySelector('.edit-profile__personal-data_input_name');
-const profileJobInput = profileForm.querySelector('.edit-profile__personal-data_input_description');
+const profileNameInput = profileForm.querySelector('.popup-form__input_input_name');
+const profileJobInput = profileForm.querySelector('.popup-form__input_input_description');
 const profileName = document.querySelector('.profile__name');
 const profileDescription = document.querySelector('.profile__description');
 
@@ -43,7 +42,6 @@ const cardPlace = document.querySelector('.places__list');
 //создание карточки
 const addCardButton = document.querySelector('.profile__add-button');
 const popupAddCardElement = document.querySelector('.popup_element_add-card');
-// const addCardCloseButton = popupAddCardElement.querySelector('.popup__close_add-card');
 const addCardName = popupAddCardElement.querySelector('.card-name');
 const addCardImage = popupAddCardElement.querySelector('.card-img');
 const addCardForm = document.forms["add-card-form"];
@@ -52,7 +50,6 @@ const addCardForm = document.forms["add-card-form"];
 const popupBigImage = document.querySelector('.popup-big-img');
 const bigImageElement = popupBigImage.querySelector('.popup-big-img__fullscreen');
 const bigImageLabel = popupBigImage.querySelector('.popup-big-img__label');
-// const bigImageClose = popupBigImage.querySelector('.popup-big-img__close');
 
 //все кнопки закрытия
 const closeButtons = document.querySelectorAll('.popup__close');
@@ -95,7 +92,7 @@ const renderNewCard = (newCard) => {
 
 initialCards.forEach(renderNewCard);
 
-//функциb открытия и закрытия попапа
+//функции открытия и закрытия попапа
 const openPopup = function (popup){
   popup.classList.add('popup_opened');
 }
