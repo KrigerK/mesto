@@ -1,4 +1,4 @@
-.edit-profile__submit {
+.popup-form__submit {
   background-color: black;
   min-width: 358px;
   border-radius: 2px;
@@ -7,23 +7,23 @@
   line-height: 22px;
   text-align: center;
   color: #FFFFFF;
-  margin-top: 48px;
+  margin-top: 20px;
   margin-bottom: 37px;
   border: none;
   cursor: pointer;
 }
 
-.edit-profile__submit:hover {
+.popup-form__submit:hover {
   opacity: 0.8;
 }
 
 @media screen and (max-width: 768px) {
-.edit-profile__submit {
+.popup-form__submit {
   min-width: 238px;
   min-height: 46px;
   font-size: 14px;
   line-height: 17px;
-  margin-top: 60px;
+  margin-top: 20px;
   margin-bottom: 25px;
 }
 }
