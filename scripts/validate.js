@@ -32,13 +32,11 @@ const addInputListeners = (form, config) => {
 }
 
 const toggleButton = (form, config) => {
-  const submitButton = form.querySelector(config.ubmitButtonSelector);
+  const submitButton = form.querySelector(config.submitButtonSelector);
   const isFormValid = form.checkValidity();
 
   submitButton.disabled = !isFormValid;
   submitButton.classList.toggle(config.inactiveButtonClass, !isFormValid);
-
-  console.log(!isFormValid)
 
 }
 

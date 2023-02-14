@@ -27,6 +27,7 @@ const initialCards = [
 ];
 
 //редактирование профиля
+const popupList = Array.from(document.querySelectorAll('.popup'));
 const popupProfile = document.querySelector('.popup_element_popup-form');
 const profileOpenButton = document.querySelector('.profile__open-popup');
 const profileForm = document.forms["profile-form"];
@@ -52,7 +53,7 @@ const bigImageElement = popupBigImage.querySelector('.popup-big-img__fullscreen'
 const bigImageLabel = popupBigImage.querySelector('.popup-big-img__label');
 
 //все кнопки закрытия
-const closeButtons = document.querySelectorAll('.popup__close');
+const closeButtonsList = Array.from(document.querySelectorAll('.popup__close'));
 
 //добавление новых карточек темплейт
 const createNewCard = (newCard) =>{
@@ -134,13 +135,27 @@ closePopup(popupAddCardElement);
 }
 
 //закрытие карточек
-closeButtons.forEach((button) => {
+closeButtonsList.forEach((button) => {
   const popup = button.closest('.popup');
   button.addEventListener('click', () => closePopup(popup))
 });
 
-//закрытие по оверлею
+//закрытие по оверлею и esc
+popupList.forEach((popup) => {
+  popup.addEventListener('click', (event)=>{
+   if(event.target === event.currentTarget) {
+    closePopup(popup)
+   }
+  })
+ });
 
+ popupList.forEach((popup) => {
+  popup.addEventListener('keydown', (event)=>{
+   if(event.key === 'Escape') {
+    closePopup(popup)
+   }
+  })
+ });
 
 //слушатели событий
 profileOpenButton.addEventListener('click', editProfile);
@@ -150,3 +165,4 @@ addCardButton.addEventListener('click', () => {
 profileForm.addEventListener('submit', handleProfileFormSubmit);
 
 addCardForm.addEventListener('submit',  handleAddCardSubmit);
+
