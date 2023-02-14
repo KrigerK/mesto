@@ -39,7 +39,6 @@
       <form class="popup-form" name="profile-form" novalidate>
         <h2 class="popup-form__title">Редактировать профиль</h2>
         <fieldset class="popup-form__text">
-          <div class="popup-form__input-box">
             <input id="input-profile-name"
               type="text"
               class="popup-form__input popup-form__input_input_name"
@@ -47,12 +46,12 @@
               placeholder=Имя"
               required
               minlength="2"
-              maxlength="40">
+              maxlength="40"
+              value="Жак-Ив Кусто">
             <span id="input-profile-name-error"
             class="popup__error"></span>
-          </div>
 
-          <div class="popup-form__input-box">
+
             <input id="input-profile-description"
               type="text"
               class="popup-form__input popup-form__input_input_description"
@@ -60,10 +59,10 @@
               placeholder="О себе"
               required
               minlength="2"
-              maxlength="200">
+              maxlength="200"
+              value="Исследователь океана">
             <span id="input-profile-description-error"
             class="popup__error"></span>
-          </div>
         </fieldset>
         <button type="submit" class="popup-form__submit">Сохранить</button>
       </form>
@@ -76,7 +75,6 @@
       <form class="popup-form" name="add-card-form" novalidate>
         <h2 class="popup-form__title">Новое место</h2>
         <fieldset class="popup-form__text">
-          <div class="popup-form__input-box">
             <input id="input-place-name"
               type="text"
               class="popup-form__input card-name" name="profile-name"
@@ -86,9 +84,8 @@
               maxlength="30">
             <span id="input-place-name-error"
             class="popup__error"></span>
-          </div>
 
-          <div class="popup-form__input-box">
+
             <input id="input-place-link"
               type="url"
               class="popup-form__input card-img"
@@ -97,7 +94,6 @@
               required>
               <span id="input-place-link-error"
               class="popup__error"></span>
-          </div>
         </fieldset>
         <button type="submit" class="popup-form__submit">Создать</button>
       </form>
