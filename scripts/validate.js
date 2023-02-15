@@ -3,33 +3,32 @@ const formValidationConfig = {
   inputSelector: '.popup-form__input',
   inputErrorClass: 'popup-form__input_type_error',
   submitButtonSelector: '.popup-form__submit',
-  inactiveButtonClass: 'popup-form__submit_disabled'
-}
+  inactiveButtonClass: 'popup-form__submit_disabled',
+};
 
 const handleFormInput = (event, config) => {
   const input = event.target;
   const inputId = input.id;
   const inputErrorElement = document.querySelector(`#${inputId}-error`);
 
-  if(!input.validity.valid){
-    input.classList.add(config.inputErrorClass)
+  if (!input.validity.valid) {
+    input.classList.add(config.inputErrorClass);
     inputErrorElement.textContent = input.validationMessage;
-  }else{
-    input.classList.remove(config.inputErrorClass)
+  } else {
+    input.classList.remove(config.inputErrorClass);
     inputErrorElement.textContent = '';
   }
-}
-
+};
 
 const addInputListeners = (form, config) => {
   const inputList = Array.from(form.querySelectorAll(config.inputSelector));
 
   inputList.forEach((input) => {
-    input.addEventListener('input', (event) =>{
-      handleFormInput (event, config)
+    input.addEventListener('input', (event) => {
+      handleFormInput(event, config);
     });
   });
-}
+};
 
 const toggleButton = (form, config) => {
   const submitButton = form.querySelector(config.submitButtonSelector);
@@ -37,19 +36,23 @@ const toggleButton = (form, config) => {
 
   submitButton.disabled = !isFormValid;
   submitButton.classList.toggle(config.inactiveButtonClass, !isFormValid);
-
-}
+};
 
 const enableValidation = (config) => {
   const formList = Array.from(document.querySelectorAll(config.formSelector));
 
   formList.forEach((form) => {
-    form.addEventListener('input', ()=> toggleButton(form, config))
+    form.addEventListener('input', () => toggleButton(form, config));
 
-    addInputListeners(form, config)
-    toggleButton(form, config)
-  })
-}
+    addInputListeners(form, config);
+    toggleButton(form, config);
+
+    form.addEventListener('reset', () => {
+      setTimeout(() => {
+        toggleButton(form, config);
+      }, 0);
+    });
+  });
+};
 
 enableValidation(formValidationConfig);
-
