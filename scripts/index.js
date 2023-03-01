@@ -1,5 +1,5 @@
-import Card from "./Card.js";
-import FormValidator from "./FormValidator.js";
+import Card from './Card.js';
+import FormValidator from './FormValidator.js';
 
 const initialCards = [
   {
@@ -73,23 +73,23 @@ const closePopup = (popup) => {
 
 // Открытие большой картинки
 const handleOpenBigImage = (link, name) => {
-  openPopup(popupBigImage)
+  openPopup(popupBigImage);
   bigImageElement.src = link;
   bigImageLabel.textContent = name;
   bigImageElement.alt = name;
-}
+};
 
 //создание карточек
 const createCard = (item) => {
   const card = new Card(item, '#card-template', handleOpenBigImage);
   const cardElement = card.createNewCard();
-  return cardElement
-}
+  return cardElement;
+};
 
 //добавление карточек на страницу
 initialCards.forEach((item) => {
   cardPlace.append(createCard(item));
-})
+});
 
 //создание новой карточки
 const handleAddCardSubmit = (evt) => {
@@ -161,8 +161,14 @@ const formValidationConfig = {
   inactiveButtonClass: 'popup-form__submit_disabled',
 };
 
-const profileFormValidation = new FormValidator (formValidationConfig, profileForm)
-profileFormValidation.enableValidation()
+const profileFormValidation = new FormValidator(
+  formValidationConfig,
+  profileForm
+);
+profileFormValidation.enableValidation();
 
-const addCardFormValidation = new FormValidator (formValidationConfig, addCardForm)
-addCardFormValidation.enableValidation()
+const addCardFormValidation = new FormValidator(
+  formValidationConfig,
+  addCardForm
+);
+addCardFormValidation.enableValidation();
