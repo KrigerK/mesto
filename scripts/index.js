@@ -107,7 +107,7 @@ popupList.forEach((popup) => {
       evt.target.classList.contains('popup_opened') ||
       evt.target.classList.contains('popup__close')
     ) {
-      closePopup(popup)
+      closePopup(popup);
       popup.querySelector('.popup-form').reset();
     }
   });
@@ -118,6 +118,7 @@ function closeByEscape(event) {
     const openedPopup = document.querySelector('.popup_opened');
     closePopup(openedPopup);
     openedPopup.querySelector('.popup-form').reset();
+
   }
 }
 
@@ -140,4 +141,4 @@ const addCardFormValidation = new FormValidator(
   formValidationConfig,
   addCardForm
 );
-addCardFormValidation.enableValidation()
+addCardFormValidation.enableValidation();
