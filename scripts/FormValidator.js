@@ -3,17 +3,25 @@ export default class FormValidator {
     (this._config = config), (this._form = form);
   }
 
+  _showInputError = () => {
+    this._input.classList.add(this._config.inputErrorClass);
+    this._inputErrorElement.textContent = this._input.validationMessage;
+  }
+
+  _hideInputError = () => {
+    this._input.classList.remove(this._config.inputErrorClass);
+    this._inputErrorElement.textContent = '';
+  }
+
   _handleFormInput = (event) => {
     this._input = event.target;
     this._inputId = this._input.id;
     this._inputErrorElement = document.querySelector(`#${this._inputId}-error`);
 
     if (!this._input.validity.valid) {
-      this._input.classList.add(this._config.inputErrorClass);
-      this._inputErrorElement.textContent = this._input.validationMessage;
+      this._showInputError()
     } else {
-      this._input.classList.remove(this._config.inputErrorClass);
-      this._inputErrorElement.textContent = '';
+      this._hideInputError()
     }
   };
   _addInputListeners = () => {
@@ -34,6 +42,8 @@ export default class FormValidator {
       !this._isFormValid
     );
   };
+
+
 
   enableValidation = () => {
     this._form.addEventListener('input', () => this._toggleButton());
