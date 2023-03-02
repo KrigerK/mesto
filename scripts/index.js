@@ -1,32 +1,6 @@
 import Card from './Card.js';
 import FormValidator from './FormValidator.js';
-
-const initialCards = [
-  {
-    name: 'Балаклава',
-    link: './images/places-balaclava.jpg',
-  },
-  {
-    name: 'Ай-Петри',
-    link: './images/places-ai-petri.jpg',
-  },
-  {
-    name: 'Фиолент',
-    link: './images/places-fiolent.jpg',
-  },
-  {
-    name: 'Ялта',
-    link: './images/places-yalta.jpg',
-  },
-  {
-    name: 'Скала Дива',
-    link: './images/places-diva.jpg',
-  },
-  {
-    name: 'Херсонес Таврический',
-    link: './images/places-hersones.jpg',
-  },
-];
+import {initialCards, formValidationConfig} from './constans.js'
 
 //редактирование профиля
 const popupProfile = document.querySelector('.popup_element_popup-form');
@@ -43,6 +17,7 @@ const profileDescription = document.querySelector('.profile__description');
 
 //добавление новых карточек темплейт
 const cardPlace = document.querySelector('.places__list');
+// const cardImage = document.querySelector('.card').querySelector('.card__image')
 
 //создание карточки
 const addCardButton = document.querySelector('.profile__add-button');
@@ -133,6 +108,7 @@ popupList.forEach((popup) => {
       evt.target.classList.contains('popup__close')
     ) {
       closePopup(popup);
+      popup.querySelector('.popup-form').reset();
     }
   });
 });
@@ -141,6 +117,8 @@ function closeByEscape(event) {
   if (event.key === 'Escape') {
     const openedPopup = document.querySelector('.popup_opened');
     closePopup(openedPopup);
+    openedPopup.querySelector('.popup-form').reset();
+
   }
 }
 
@@ -152,15 +130,7 @@ addCardButton.addEventListener('click', () => {
 profileForm.addEventListener('submit', handleProfileFormSubmit);
 addCardForm.addEventListener('submit', handleAddCardSubmit);
 
-//валидация форм
-const formValidationConfig = {
-  formSelector: '.popup-form',
-  inputSelector: '.popup-form__input',
-  inputErrorClass: 'popup-form__input_type_error',
-  submitButtonSelector: '.popup-form__submit',
-  inactiveButtonClass: 'popup-form__submit_disabled',
-};
-
+//Валидация форм
 const profileFormValidation = new FormValidator(
   formValidationConfig,
   profileForm

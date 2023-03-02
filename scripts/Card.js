@@ -32,16 +32,17 @@ export default class Card {
     this._card.querySelector('.card__trash-btn').addEventListener('click', () => {
       this._removeCard();
     });
-    this._card.querySelector('.card__image').addEventListener('click',()=>{
+    this._cardImage.addEventListener('click',()=>{
       this._handleOpenBigImage(this._link, this._name)
     })
   }
 
   createNewCard(){
     this._card = this._getTemplate();
+    this._cardImage = this._card.querySelector('.card__image');
 
-    this._card.querySelector('.card__image').src = this._link;
-    this._card.querySelector('.card__image').alt = this._name;
+    this._cardImage.src = this._link;
+    this._cardImage.alt = this._name;
     this._card.querySelector('.card__title').textContent = this._name;
     this._setEventListeners();
 
